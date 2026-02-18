@@ -66,7 +66,7 @@ export default function Auth() {
           setError(response.message || 'Email ou mot de passe incorrect');
         }
       }
-    } catch (err) {
+    } catch {
       setError('Une erreur est survenue. Veuillez réessayer.');
     } finally {
       setIsLoading(false);
