@@ -74,7 +74,12 @@ export default function Auth() {
   };
 
   return (
-    <div className="auth-page">
+    <main className="auth-page">
+      <section className="auth-visual" aria-label="Présentation GoodFood" style={{ backgroundColor: '#ff5a24' }}>
+        <div className="burger-illustration" aria-hidden="true"><span className="burger-top" /><span className="burger-line one" /><span className="burger-line two" /><span className="burger-bottom" /></div>
+        <div className="auth-visual-copy"><h2>Bon appétit !</h2><p>Commandez vos plats préférés en quelques clics</p></div>
+      </section>
+      <section className="auth-content">
       <div className="auth-container">
         {/* Tab Switcher */}
         <div className="auth-tabs">
@@ -196,6 +201,8 @@ export default function Auth() {
           </button>
         </div>
       </div>
-    </div>
+    </section>
+    </main>
   );
 }
+
