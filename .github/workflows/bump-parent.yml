@@ -1,0 +1,14 @@
+name: Bump parent repo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  bump:
+    uses: RMurier/BAC-5-CUBE-1-COLLABORATIF/.github/workflows/bump-submodule.yml@develop
+    with:
+      service: goodfood-front-web
+      sha: ${{ github.sha }}
+    secrets:
+      PARENT_REPO_PAT: ${{ secrets.PARENT_REPO_PAT }}
