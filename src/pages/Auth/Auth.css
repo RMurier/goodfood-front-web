@@ -27,6 +27,10 @@
 
 .auth-tab {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 14px var(--spacing-lg);
   border: none;
   background: transparent;
@@ -128,6 +132,11 @@
 /* Primary Button */
 .auth-form .btn-primary {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
   padding: 18px var(--spacing-xl);
   background-color: var(--color-primary);
   color: var(--color-white);

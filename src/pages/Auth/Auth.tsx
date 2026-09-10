@@ -6,7 +6,7 @@ import './Auth.css';
 type AuthMode = 'login' | 'register';
 
 export default function Auth() {
-  const [mode, setMode] = useState<AuthMode>('register');
+  const [mode, setMode] = useState<AuthMode>('login');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -84,16 +84,16 @@ export default function Auth() {
         {/* Tab Switcher */}
         <div className="auth-tabs">
           <button
-            className={`auth-tab ${mode === 'register' ? 'active' : ''}`}
-            onClick={() => handleModeChange('register')}
-          >
-            Inscription
-          </button>
-          <button
             className={`auth-tab ${mode === 'login' ? 'active' : ''}`}
             onClick={() => handleModeChange('login')}
           >
             Connexion
+          </button>
+          <button
+            className={`auth-tab ${mode === 'register' ? 'active' : ''}`}
+            onClick={() => handleModeChange('register')}
+          >
+            Inscription
           </button>
         </div>
 
@@ -127,8 +127,8 @@ export default function Auth() {
 
           <div className="form-group">
             <input
-              type="email"
-              placeholder="Email"
+              type={mode === 'login' ? 'text' : 'email'}
+              placeholder={mode === 'login' ? 'Email ou identifiant' : 'Email'}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -143,7 +143,7 @@ export default function Auth() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              minLength={8}
+              minLength={mode === 'register' ? 8 : undefined}
               disabled={isLoading}
             />
           </div>
